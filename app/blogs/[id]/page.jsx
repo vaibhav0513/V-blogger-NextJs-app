@@ -1,3 +1,4 @@
+
 'use client';
 import { assets } from '@/Assets/assets';
 import Footer from '@/Components/Footer';
@@ -22,7 +23,7 @@ const Page = ({ params }) => {
 
   useEffect(() => {
     fetchBlogData();
-  }, [params.id]); // Dependency on params.id to refetch on ID change
+  }, [params.id]); // Added params.id as a dependency
 
   return (
     data ? (
