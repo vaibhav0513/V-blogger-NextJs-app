@@ -24,11 +24,18 @@ const Page = () => {
 
   const imageUrl = image ? URL.createObjectURL(image) : assets.upload_area;
 
+  // useEffect(() => {
+  //   return () => {
+  //     if (image) URL.revokeObjectURL(imageUrl);
+  //   };
+  // }, [image]);
+
   useEffect(() => {
     return () => {
-      if (image) URL.revokeObjectURL(imageUrl);
+      if (image) URL.revokeObjectURL(URL.createObjectURL(image));
     };
   }, [image]);
+  
 
   const onSubmitHandler = async (e) => {
     e.preventDefault();
